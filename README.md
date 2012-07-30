@@ -1,6 +1,8 @@
 Node Experiment
 ===============
 
+[![Build Status](https://secure.travis-ci.org/dvberkel/node-experiment.png?branch=master)](http://travis-ci.org/dvberkel/node-experiment)
+
 This project aims to explore the various intracies of developing a
 [node][1] applications.
 
