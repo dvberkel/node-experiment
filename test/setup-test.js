@@ -9,4 +9,4 @@ vows.describe('Test Setup').addBatch({
 	    assert.equal (topic, true);
 	}
     }
-}).run();
+}).export(module);
