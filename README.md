@@ -13,7 +13,14 @@ Environment
 We will be using Node Package Manager ([npm][4]) which comes with
 node. Run the following command to retrieve all the dependencies.
 
-    node install
+    npm install
+
+Test
+----
+
+    npm test
+
+Execute the command above to run the tests in this project.
 
 [1]: http://nodejs.org/ "Homepage of Node"
 [2]: http://joyeur.com/2010/12/10/installing-node-and-npm/ "A no-nonsense guide to start with node"

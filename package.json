@@ -8,6 +8,9 @@
       "name": "Daan van Berkel",
       "email": "daan.v.berkel.1980@gmail.com"
   }],
+  "scripts": {
+    "test": "./node_modules/.bin/vows test/* --spec"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dvberkel/node-experiment.git"
