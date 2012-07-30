@@ -1,12 +1,12 @@
 var vows = require('vows');
-var assert = require('assert');
+var should = require('should');
 
 vows.describe('Test Setup').addBatch({
     'when configured correctly': {
 	topic: function(){ return true; },
 	
 	'should correctly run tests': function(topic){
-	    assert.equal (topic, true);
+	    should.equal (topic, true);
 	}
     }
 }).export(module);

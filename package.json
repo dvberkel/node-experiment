@@ -21,7 +21,8 @@
     "express": "2.5.11"
   },
   "devDependencies": {
-    "vows": "0.6.3"
+    "vows": "0.6.3",
+    "should": "1.0.0"
   },
   "license": "MIT"
 }
