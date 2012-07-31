@@ -1,15 +1,6 @@
 var vows = require('vows');
 var words = require('../lib/words');
-
-var repeat = function(n){
-    return {
-	times : function(operator) {
-	    for (var index = 0; index < n; index++) {
-		operator.call();
-	    }
-	}
-    };
-};
+var util = require('../lib/util');
 
 vows.describe('Words').addBatch({
     'when \'#over\' is called with the alphabet \'["a", "b"]\'' : {
@@ -19,7 +10,7 @@ vows.describe('Words').addBatch({
 	    var generator = words.over(alphabet);
 	    
 	    var result;
-	    repeat(1).times(function(){ result = generator.next(); });
+	    util.repeat(1).times(function(){ result = generator.next(); });
 	    
 	    result.should.equal('');
 	},
@@ -28,7 +19,7 @@ vows.describe('Words').addBatch({
 	    var generator = words.over(alphabet);
 	    
 	    var result;
-	    repeat(2).times(function(){ result = generator.next(); });
+	    util.repeat(2).times(function(){ result = generator.next(); });
 	    
 	    result.should.equal('a');
 	},
@@ -37,7 +28,7 @@ vows.describe('Words').addBatch({
 	    var generator = words.over(alphabet);
 
 	    var result;
-	    repeat(3).times(function(){ result = generator.next(); });
+	    util.repeat(3).times(function(){ result = generator.next(); });
 	    
 	    result.should.equal('b');
 	},
@@ -46,7 +37,7 @@ vows.describe('Words').addBatch({
 	    var generator = words.over(alphabet);
 
 	    var result;
-	    repeat(4).times(function(){ result = generator.next(); });
+	    util.repeat(4).times(function(){ result = generator.next(); });
 	    
 	    result.should.equal('aa');
 	}
