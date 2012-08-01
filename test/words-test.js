@@ -49,6 +49,15 @@ vows.describe('Words').addBatch({
 	    util.repeat(5).times(function(){ result = generator.next(); });
 	    
 	    result.should.equal('ab');
+	},
+
+	'\'#next\' called six times should return \'bb\'' : function(alphabet){
+	    var generator = words.over(alphabet);
+
+	    var result;
+	    util.repeat(6).times(function(){ result = generator.next(); });
+	    
+	    result.should.equal('bb');
 	}
     }
 }).export(module);
