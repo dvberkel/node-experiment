@@ -22,6 +22,16 @@ Test
 
     npm test
 
+will run all the test in this project.
+
+Run
+---
+
+The command below will start the node server
+
+    npm start
+
+
 Execute the command above to run the tests in this project.
 
 [1]: http://nodejs.org/ "Homepage of Node"
