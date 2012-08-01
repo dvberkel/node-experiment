@@ -27,7 +27,8 @@
   },
   "devDependencies": {
     "vows": "0.6.3",
-    "should": "1.0.0"
+    "should": "1.0.0",
+    "nodemon": ">=0.0.1"
   },
   "license": "MIT"
 }
