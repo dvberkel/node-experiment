@@ -40,6 +40,15 @@ vows.describe('Words').addBatch({
 	    util.repeat(4).times(function(){ result = generator.next(); });
 	    
 	    result.should.equal('aa');
+	},
+
+	'\'#next\' called five times should return \'ab\'' : function(alphabet){
+	    var generator = words.over(alphabet);
+
+	    var result;
+	    util.repeat(5).times(function(){ result = generator.next(); });
+	    
+	    result.should.equal('ab');
 	}
     }
 }).export(module);
