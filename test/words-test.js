@@ -58,6 +58,24 @@ vows.describe('Words').addBatch({
 	    util.repeat(6).times(function(){ result = generator.next(); });
 	    
 	    result.should.equal('bb');
+	},
+
+	'\'#next\' called seven times should return \'aaa\'' : function(alphabet){
+	    var generator = words.over(alphabet);
+
+	    var result;
+	    util.repeat(7).times(function(){ result = generator.next(); });
+	    
+	    result.should.equal('aaa');
+	},
+
+	'\'#next\' called eight times should return \'aab\'' : function(alphabet){
+	    var generator = words.over(alphabet);
+
+	    var result;
+	    util.repeat(8).times(function(){ result = generator.next(); });
+	    
+	    result.should.equal('aab');
 	}
     }
 }).export(module);
