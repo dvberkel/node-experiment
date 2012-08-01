@@ -152,5 +152,16 @@ vows.describe('Words').addBatch({
 	    
 	    result.should.equal('ba');
 	}
+    },
+    'when \'#over\' is called with alphabet is [\'a\', \'b\']' : {
+	topic : function(){ return words.over(["a", "b"])},
+
+	'\'#startingAt\'should reset the generator' : function(generator){
+	    generator.startingAt('aaaa');
+	    
+	    var result = generator.next();
+
+	    result.should.equal('aaaa')
+	}
     }
 }).export(module);
