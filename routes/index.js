@@ -3,15 +3,20 @@
  * GET home page.
  */
 
+var words = require('../lib/words');
+var generator = words.over(["a", "b", "c"]).startingAt("aaa");
+
 exports.index = function(req, res){
   res.render('index', { title: 'Express' })
 };
 
 exports.shorten = function(req, res){
-    console.log("shorten called");
+    var target = req.param('target');
+    var origin = generator.next();
     res.writeHead(200, { "Content-Type" : "application/json" });
     res.write(JSON.stringify({
-	"all": "ok"
+	"target": target,
+	"origin": origin
     }));
     res.end();
 };

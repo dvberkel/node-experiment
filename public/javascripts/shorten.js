@@ -18,8 +18,9 @@
 		data: {
 		    target: url
 		},
-		success: function(){
-		    console.log("success");
+		success: function(data){
+		    console.log(data.origin);
+		    console.log(data.target);
 		},
 		error: function(){
 		    console.log("error")
