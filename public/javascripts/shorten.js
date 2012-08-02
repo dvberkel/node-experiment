@@ -12,7 +12,20 @@
 	}, options);
 	this.click(function(){
 	    var url = settings.target.val();
-	    console.log(url);
+	    $.ajax("", {
+		type: "POST",
+		async: true,
+		data: {
+		    target: url
+		},
+		success: function(){
+		    console.log("success");
+		},
+		error: function(){
+		    console.log("error")
+		}
+		
+	    });
 	});
     };
     
