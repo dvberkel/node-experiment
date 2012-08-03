@@ -3,6 +3,7 @@
  * GET home page.
  */
 
+var shortener = require('../lib/shortener');
 var words = require('../lib/words');
 var generator = words.over(["a", "b", "c"]).startingAt("aaa");
 var database = {};
@@ -12,19 +13,18 @@ exports.index = function(req, res){
 };
 
 exports.shorten = function(req, res){
-    var target = req.param('target');
-    var origin = generator.next();
-    database[origin] = target;
+    var result = shortener.shorten(req.param('target'));
     res.writeHead(200, { "Content-Type" : "application/json" });
-    res.write(JSON.stringify({
-	"target": target,
-	"origin": origin
-    }));
+    res.write(JSON.stringify(result));
     res.end();
 };
 
 exports.lookup = function(req, res){
-    var origin = req.param('origin');
-    var target = database[origin]; 
-    res.redirect(target);
+    var result = shortener.lookup(req.param('origin'));
+    if (result.success) {
+	res.redirect(result.target);
+    } else {
+	result.title = "oops";
+	res.render('no-look-up', result);
+    }
 };
