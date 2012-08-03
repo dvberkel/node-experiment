@@ -31,6 +31,7 @@ The command below will start the node server
 
     npm start
 
+It expects a running [Redis][5] database with no frills.
 
 Execute the command above to run the tests in this project.
 
@@ -38,4 +39,5 @@ Execute the command above to run the tests in this project.
 [2]: http://joyeur.com/2010/12/10/installing-node-and-npm/ "A no-nonsense guide to start with node"
 [3]: https://github.com/joyent/node#to-build "Build instructions for node as found on GitHub"
 [4]: http://npmjs.org/ "Node Package Manager's Homepage"
+[5]: http://redis.io/ "Redis Homepage"
 

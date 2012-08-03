@@ -20,11 +20,12 @@ exports.shorten = function(req, res){
 };
 
 exports.lookup = function(req, res){
-    var result = shortener.lookup(req.param('origin'));
-    if (result.success) {
-	res.redirect(result.target);
-    } else {
-	result.title = "oops";
-	res.render('no-look-up', result);
-    }
+    shortener.lookup(req.param('origin'), function(result){
+	if (result.success) {
+	    res.redirect(result.target);
+	} else {
+	    result.title = "oops";
+	    res.render('no-look-up', result);
+	}
+    });
 };
